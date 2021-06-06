@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -17,8 +18,12 @@ public class Main {
 
         Random random = new Random();
 
+        Scanner input = new Scanner(System.in);
+
         for (int i = 0; i < N; i++) {
             mas[i] = random.nextInt(100);
+            //mas[i] = input.nextInt();
+            //mas[i] = i * 2;
         }
 
         for (int i = 0; i < N; i++) {
