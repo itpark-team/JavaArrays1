@@ -55,16 +55,22 @@ public class Main3 {
         int rightIndex = N - 1;
         int middleIndex;
 
-        while (rightIndex - leftIndex > 1) {
-            middleIndex = (leftIndex + rightIndex) / 2;
+        if (searchWeight == weightsCollection[0]) {
+            searchIndex = 0;
+        } else if (searchWeight == weightsCollection[N - 1]) {
+            searchIndex = N - 1;
+        } else {
+            while (rightIndex - leftIndex > 1) {
+                middleIndex = (leftIndex + rightIndex) / 2;
 
-            if (weightsCollection[middleIndex] == searchWeight) {
-                searchIndex = middleIndex;
-                break;
-            } else if (weightsCollection[middleIndex] < searchWeight) {
-                leftIndex = middleIndex;
-            } else if (weightsCollection[middleIndex] > searchWeight) {
-                rightIndex = middleIndex;
+                if (weightsCollection[middleIndex] == searchWeight) {
+                    searchIndex = middleIndex;
+                    break;
+                } else if (weightsCollection[middleIndex] < searchWeight) {
+                    leftIndex = middleIndex;
+                } else if (weightsCollection[middleIndex] > searchWeight) {
+                    rightIndex = middleIndex;
+                }
             }
         }
 
